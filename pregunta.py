@@ -73,7 +73,8 @@ def ingest_data():
                 por_borrar.insert(0,i+cont)
                 #Para las strings conflictivas en filas complementarias
                 if len(complemento)>1:
-                    complemento=" ".join(str(x) for x in complemento)
+                    complemento=[" ".join(str(x) for x in complemento)]
+                #print(complemento)
                 filas[i][3]+=(complemento)[0]
                 cont+=1
                 if i+cont<len(t):
@@ -93,4 +94,4 @@ def ingest_data():
     df = pd.DataFrame(filas, columns=columnas)
     return df
 
-print(ingest_data().principales_palabras_clave.to_list()[0])
+print(ingest_data().principales_palabras_clave.to_list()[1])
