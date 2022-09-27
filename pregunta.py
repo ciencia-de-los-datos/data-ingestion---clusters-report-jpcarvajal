@@ -25,7 +25,7 @@ def ingest_data():
 
     columnas = [a+" "+b for a,b in zip(t[0],t[1])]
 
-    columnas = [x.lower().replace(" ","_") for x in columnas]
+    columnas = [x.lower().strip().replace(" ","_") for x in columnas]
 
     por_borrar=[]
     #Filas
@@ -90,9 +90,10 @@ def ingest_data():
         print(i) """
 
     df = pd.DataFrame(filas, columns=columnas)
-
+    print(columnas)
     return df
 
-print(ingest_data().cantidad_de_palabras_clave.to_list())
+""" print(ingest_data().cantidad_de_palabras_clave.to_list())
 print(ingest_data().porcentaje_de_palabras_clave.to_list())
-#print(ingest_data())
+
+print(ingest_data()) """
