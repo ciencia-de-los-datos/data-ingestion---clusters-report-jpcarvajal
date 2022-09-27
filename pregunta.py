@@ -41,6 +41,7 @@ def ingest_data():
             if not t[i][0].isdigit():
                 if t[i][0][:3]=="   ":
                     t[i]=[re.sub("\s{2,}"," ", x) for x in t[i]]
+                    t[i]=[re.sub(".$","", x) for x in t[i]]
             #Se realiza el procesamiento para los números de las filas "iniciales"
             else:
                 for x in range(len(t[i])):
@@ -90,10 +91,6 @@ def ingest_data():
         print(i) """
 
     df = pd.DataFrame(filas, columns=columnas)
-    print(columnas)
     return df
 
-""" print(ingest_data().cantidad_de_palabras_clave.to_list())
-print(ingest_data().porcentaje_de_palabras_clave.to_list())
-
-print(ingest_data()) """
+print(ingest_data().principales_palabras_clave.to_list()[0])
