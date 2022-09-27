@@ -64,7 +64,8 @@ def ingest_data():
         if type(t[i][0]) is int:
             #En caso de que haya strings conflictivos en la fila inicial
             while len(t[i])>4:
-                t[i][-2]+=t[i].pop()
+                t[i][-2]+=" "+t[i][-1]
+                t[i].pop()
             cont=1
             complemento=filas[i+cont]
             while type(complemento[0]) is not int and cont+i < len(t):
@@ -85,8 +86,13 @@ def ingest_data():
         filas[i][3]=re.sub("\s{2,}"," ",filas[i][3])
         filas[i][3]=re.sub("\A\s","",filas[i][3])
     
+    """for i in filas:
+        print(i) """
+
     df = pd.DataFrame(filas, columns=columnas)
 
     return df
 
 print(ingest_data().cantidad_de_palabras_clave.to_list())
+print(ingest_data().porcentaje_de_palabras_clave.to_list())
+#print(ingest_data())
