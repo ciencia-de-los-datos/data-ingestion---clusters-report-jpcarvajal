@@ -11,6 +11,7 @@ import pregunta
 def test_01():
     assert pregunta.ingest_data().cluster.to_list() == list(range(1, 14))
 
+
 def test_02():
     assert pregunta.ingest_data().cantidad_de_palabras_clave.to_list() == [
         105,
