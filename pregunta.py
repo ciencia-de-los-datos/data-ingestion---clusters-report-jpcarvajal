@@ -41,7 +41,7 @@ def ingest_data():
             if not t[i][0].isdigit():
                 if t[i][0][:3]=="   ":
                     t[i]=[re.sub("\s{2,}"," ", x) for x in t[i]]
-                    t[i]=[re.sub(".$","", x) for x in t[i]]
+                    t[i]=[re.sub("\.$","", x) for x in t[i]]
             #Se realiza el procesamiento para los números de las filas "iniciales"
             else:
                 for x in range(len(t[i])):
