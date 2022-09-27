@@ -65,4 +65,3 @@ Cluster  Cantidad de     Porcentaje de   Principales palabras clave
                                          optimisation, particles-size  distributions,  biomass  gasification,  exergy, 
                                          battery    management,    hydrogen     production,     numeric    simulation, 
                                          system-identification.
-
